@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM - Document Object Model</title>
+	<script>
+		function tauscheBild(quelle,idElem) {
+			document.querySelector(idElem).src = quelle;
+		}
+	</script>
+</head>
+
+<body>
+	<img style="border:2px solid blue;" src="images/Aegypten.jpg" id="pic0" alt=".." onclick="console.log('Es wurde auf das Bild geklickt');" onmouseover="tauscheBild('images/Omikron.jpg','#pic0');" onmouseout="tauscheBild('images/Aegypten.jpg','#pic0');">
+	
+	<img src="images/Buecher.jpg" id="pic1" alt=".." onmouseover="tauscheBild('images/Jugend.jpg','#pic1');" onmouseout="tauscheBild('images/Buecher.jpg','#pic1');"
+	onclick="tauscheBild('images/Shiffrin.jpg','#pic0');">
+	
+	<button onclick="tauscheBild('images/US-Omikron.jpg','#pic1');">klick mich an</button>
+	<p onclick="console.log('Ich Paragraf wurde angeklickt');">Ich bin auch klickbar</p>
+</body>
+</html>

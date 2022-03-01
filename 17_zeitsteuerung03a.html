@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bildergalerie</title>
+	<script>
+		var itv;
+		var zaehler = 0;
+		var bilder = [
+			"images/numbers/zero.png",
+			"images/numbers/one.png",
+			"images/numbers/two.png",
+			"images/numbers/three.png",
+			"images/numbers/four.png",
+			"images/numbers/five.png",
+			"images/numbers/six.png",
+			"images/numbers/seven.png",
+			"images/numbers/eight.png",
+			"images/numbers/nine.png",
+		];
+		
+		window.addEventListener("load",starteBildwechsler,false);
+		
+		function starteBildwechsler() {
+			clearInterval(itv); //löscht ein Intervall, das der Variable itv zugewiesen wurde, sofern dies auch tatsächlich geschehen ist; sollte die Variable itv kein Intervall zugewiesen bekommen haben, so tritt auch keine Fehlermeldung auf.
+			itv = setInterval("wechsleBild();",1000); //beachte: Intervall- oder Timeout-Variablen müssen IMMER GLOBAL sein, denn ansonsten kann man auf diese Variablen nicht mehr zugreifen
+		}
+		
+		function wechsleBild() {
+			zaehler++;
+			if(zaehler==bilder.length) {
+				zaehler = 0;
+			}
+			var neueBildquelle = bilder[zaehler];
+			document.getElementById("pic0").src = neueBildquelle;
+		}
+	</script>
+</head>
+
+<body>
+	<img src="images/numbers/zero.png" id="pic0" alt="Numbers">
+	<button onclick="clearInterval(itv);">stoppe...</button>
+	<button onclick="starteBildwechsler();">starte...</button>
+</body>
+</html>

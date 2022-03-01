@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS: Dokumentbaum</title>
+	<style>
+		div a {
+			/* es werden alle a-Elemente selektiert, die in irgendeiner hierarchischen Ebene (als Elternelement, als Großelternelement, ...) ein Elternelement namens div haben; Spezifität 0002 */
+			color:red;
+		}
+		
+		div > a {
+			/* es werden alle a-Elemente selektiert, die als direktes Elternelement ein div-Element haben; 0002 */
+			color:green;
+		}
+		
+		div + a {
+			/* es werden alle a-Elemente selektiert, die als direktes vorangegangenes Geschwisterelement ein div haben; 0002 */
+			color:orange;
+		}
+		
+		div ~ a {
+			/* es werden alle a-Elemente selektiert, die als vorangegangenes Geschwisterelement ein div haben; 0002 */
+			color:magenta;
+		}
+		
+		section > a {
+			
+		}
+		.b > a {
+			
+		}
+		.b > #a + a,
+		.b p > a {
+			color:yellow;
+		}
+		
+		section.b > div#a + a {
+			/* 0113 */
+		}
+		
+		body section.b > div#a + a {
+			/* 0114 */	
+		}
+	</style>
+</head>
+
+<body>
+	<section class="b">
+		<div id="a">
+			<div>
+				<a href="#">Link</a>
+				<div>
+					<p>Text...</p>
+					<p>Hallo Welt. <a href="#">Link</a></p>
+					<a href="#">Link</a>
+				</div>
+				<a href="#">Link</a>
+				<p>Hier steht noch weiterer Text mit einem Link: <a href="#">Link</a>.</p>
+				<a href="#">Link</a>
+			</div>
+		</div>
+		<a href="#">Link</a>
+	</section>
+</body>
+</html>

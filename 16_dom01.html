@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM - Document Object Model</title>
+</head>
+
+<body>
+	<img src="images/Aegypten.jpg" alt="..." class="xy">
+	<img src="images/Oetscher.jpg" alt="..." name="pic">
+	<img src="images/Shiffrin.jpg" alt=".." id="pic0" name="pic" class="xy">
+	
+	<p>Hallo Welt!</p>
+	
+	<script>
+		/* Manipulation eines HTML-Elements:
+		   1. Zugriff auf das gewünschte HTML-Element
+		   2. Zugriff auf alle Attribute dieses Elements bzw. Zugriff auf den "beinhalteten" HTML-Code
+		   
+		   ad. 1:
+		   - document.getElementById("pic0")
+		   - document.getElementsByName("pic") --> nicht eindeutig, dementsprechend ist das Ergebnis ein Array!
+		   - document.getElementsByTagName("img") --> nicht eindeutig; Array
+		   - document.getElementsByClassName("xy") --> nicht eindeutig; Array
+		   - document.querySelector("#pic0"), document.querySelector("[name=pic]"), document.querySelector("img"), document.querySelector(".xy") --> liefert den Zugriff auf das ERSTE Element dieser Selektion (auch wenn es sich bei der Selektion um eine mehrdeutige Selektion handelt)
+		   - document.querySelectorAll("...") --> genau wie document.querySelector, jedoch liefert dieser Befehl wiederum ein Array aller betroffenen Elemente
+		   
+		   ad. 2:
+		   - document.getElementById("pic0").alt = "Hallo"; oder document.getElementById("pic0").src = "images/Buecher.jpg"; oder document.getElementById("pic0").title = "Das ist der Titel";
+		   - document.getElementsByName("pic")[0].alt = "..."; usw.
+		   - document.getElementsByTagName("img").alt = "..."; usw.
+		   - document.getElementsByClassName("xy").alt = "..."; usw.
+		   
+		   ad. 2:
+		   - ... .innerHTML = "...";
+		*/
+		document.getElementById("pic0").alt = "Hallo";
+		document.getElementById("pic0").src = "images/Buecher.jpg";
+		document.getElementById("pic0").title = "Das ist der Titel";
+		
+		document.getElementsByName("pic")[1].src = "images/Jugend.jpg";
+		
+		document.getElementsByTagName("img")[0].src = "images/Logo_ORF.at.svg";
+		
+		document.getElementsByClassName("xy")[1].src = "images/Omikron.jpg";
+		
+		document.querySelector("img").src = "images/US-Omikron.jpg";
+		document.querySelectorAll("img")[2].src = "images/US-Omikron.jpg";
+		
+		document.getElementsByTagName("p")[0].innerHTML = "Haa<mark>aa</mark>llllo";
+		
+		var html = document.querySelector("p").innerHTML;
+		for(var i=0; i<10; i++) {
+			html = html + "... <a href='https://orf.at' target='_blank'>neuer Text</a>...";
+		}
+		document.querySelector("p").innerHTML = html;
+	</script>
+</body>
+</html>

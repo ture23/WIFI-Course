@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grundlagen der Programmierung: Schleifen</title>
+</head>
+
+<body>
+	<script>
+		console.log("Hallo Welt!");
+		console.log("Hallo Welt!");
+		console.log("Hallo Welt!");
+		console.log("Hallo Welt!");
+		console.log("Hallo Welt!");
+		
+		/* fixe Anzahl an (Schleifen-) Durchläufen: for-Schleife
+		   - Zählvariable: erhält zu Beginn der Schleife einen Startwert --> var i=0
+		   - Durchlaufbedingung: idR. abhängig von der Zählvariable --> i<5
+		   - Erhöhung/Verringerung der Zählvariable AM ENDE eines jeden Schleifendurchlaufes
+		   
+		   i = i+1 --> i+=1 --> i++
+		   j = j-1 --> j-=1 --> j--
+		   k = k*3 --> k*=3
+		   l = l/4 --> l/=4
+		*/
+		
+		for(var i=0; i<5; i=i+1) {
+			console.log("Hallo Welt!",i);
+		}
+	</script>
+</body>
+</html>

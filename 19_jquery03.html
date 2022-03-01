@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		/* Dokumentbaum:
+		   $("...").parent() --> greift auf das Elternelement des/der ausgewählten Elements/e zu
+		   .parents() --> alle Elternelemente (auch Großeltern, Urgroßeltern, etc.)
+		   .closest("ul") --> näheste übergeordnete (Elter-) Element einer speziellen Selektion (hier: ul-Tag)
+		   .children() --> greift auf alle DIREKTEN Kinder zu
+		   .find() --> greift auf alle Kinder, Enkelkinder, etc. zu
+		   .siblings() --> greift auf alle Geschwisterlemente zu
+		   .next() --> greift auf näheste jüngere Geschwisterlement zu
+		   .nextAll() --> greift auf alle jüngeren Geschwisterlemente zu
+		   .prev() --> greift auf näheste ältere Geschwisterelement zu
+		   .prevAll() --> greift auf alle älteren Geschwisterelemente zu
+		*/
+		
+		$(document).ready(function() {
+			$("#c").parent().css("border","1px solid red");
+			$("#c").parents().css("border","2px solid blue");
+			
+			$("p").children("strong").css("border","1px solid green");
+			$("#ul0").siblings().css("border","3px solid yellow");
+			
+			/*
+			$("li").click(function() {
+				$(this).parent().css("border","2px dotted red");
+			});
+			*/
+			$("li").on("click",function(ereignis) {
+				//beachte: es geschieht an dieser Stelle ein sog. "Event Bubbling"
+				ereignis.stopPropagation(); //verhindert das Event Bubbling
+				$(this).parent().css("border","2px dotted red");
+			});
+			
+			$("article h1").on("click",function(ev) {
+				ev.stopPropagation();
+				//$(this).parent().nextAll().toggle();
+				//$(this).closest("header").nextAll().toggle();
+				$(this).closest("article").children("p, footer").toggle();
+				$(this).closest("article").children(":not(header)").toggle();
+			});
+		});
+	</script>
+	<style>
+		article p,
+		article footer {
+			display:none;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Hallo</h1>
+	<p>Ich bin ein <i>wichtiger</i> Paragraf</p>
+	<p>Ich bin ein <strong>wichtiger Link: <a href="http://www.orf.at" target="_blank">zum ORF</a></strong></p>
+	<ul id="ul0">
+		<li>Eins</li>
+		<li>Zwei
+			<ul class="b">
+				<li>a</li>
+				<li>b</li>
+				<li id="c" onclick='$(this).parent().parent().parent().prev().prev().children().css("font-size","200%");'>c</li>
+			</ul>
+		</li>
+		<li>Drei</li>
+	</ul>
+	<p>Hallo Welt!</p>
+	<article>
+		<header>
+			<h1>Sport</h1>
+			<button>x</button>
+		</header>
+		<p>lkshdflasdhdddd sdf sld f</p>
+		<footer>
+			<a href="#">a</a><a href="#">b</a>
+		</footer>
+	</article>
+	<article>
+		<header>
+			<h1>Wirtschaft</h1>
+			<button>x</button>
+		</header>
+		<p>lkshdflasdh ase adgssld f</p>
+		<footer>
+			<a href="#">a</a><a href="#">b</a>
+		</footer>
+	</article>
+	<article>
+		<header>
+			<div>
+				<h1>Chronik</h1>
+			</div>
+			<button>x</button>
+		</header>
+		<p>lkshdflasdh sas  dfasdf asd fsd fsdfld f</p>
+		<div>ICH bin ein DIV</div>
+		<footer>
+			<a href="#">a</a><a href="#">b</a>
+		</footer>
+	</article>
+</body>
+</html>

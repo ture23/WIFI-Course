@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX</title>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			//ab dem Zeitpunkt, wo dieses Ereignis eintritt, ist der Browser mit dem Abarbeiten (=Einlesen & Verstehen) des Dokuments (konkret: des Dokumentbaumes) fertig --> ab jetzt können wir auf alle HTML-Elemente dieses Dokuments zugreifen
+			
+			$("#btn0").on("click",function(ev) {
+				ev.stopPropagation();
+				$("#a").load(
+					"content/kontakt.php",
+					{ VN: $("#VN").val(), NN: $("#NN").val() }
+				);
+			});
+		});
+	</script>
+	<style>
+		#a {
+			background-color:#eee;
+			padding:0.5em;
+			margin:1em 0px;
+			min-height:10em;
+			border-radius:0.5em;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="a"></div>
+	<form>
+		<label for="VN">Ihr Vorname:</label>
+		<input type="text" name="VN" id="VN">
+		<label for="NN">Ihr Nachname:</label>
+		<input type="text" name="NN" id="NN">
+		<button type="button" id="btn0">lade Inhalt</button>
+	</form>
+	
+	<!--
+	<form method="post" action="content/kontakt.php">
+		<label for="VN">Ihr Vorname:</label>
+		<input type="text" name="VN" id="VN">
+		<label for="NN">Ihr Nachname:</label>
+		<input type="text" name="NN" id="NN">
+		<button type="submit" id="btn0">lade Inhalt</button>
+	</form>
+	-->
+</body>
+</html>

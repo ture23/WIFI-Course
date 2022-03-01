@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulare</title>
+	<style>
+		form * {
+			display:block;
+		}
+		label * {
+			display:inline;
+		}
+	</style>
+</head>
+
+<body>
+	<form method="post">
+		<fieldset>
+			<legend>Logindaten</legend>
+			<label for="E">Emailadresse:</label>
+			<input type="email" name="E" id="E" required>
+			<label for="P">Passwort:</label>
+			<input type="password" name="P" id="P" required>
+		</fieldset>
+		
+		<label for="Vorname">Vorname:</label>
+		<input type="text" name="VN" id="Vorname" required placeholder="Ihr Vorname">
+		<label>
+			Nachname:
+			<input type="text" name="NN" placeholder="Ihr Nachname">
+		</label>
+		<label for="PLZ">PLZ:</label>
+		<input type="text" name="PLZ" id="PLZ" value="4020" placeholder="Ihre PLZ, bitte">
+		
+		<input type="number" name="Num" step="0.1" min="10" max="15">
+		<input type="date" name="Geb">
+		<input type="color" name="Lieblingsfarbe">
+		<input type="range" min="10" max="15">
+		
+		<label>
+			<input type="radio" name="Geschlecht" value="w">
+			weiblich
+		</label>
+		<label>
+			<input type="radio" name="Geschlecht" value="m">
+			männlich
+		</label>
+		<label>
+			<input type="radio" name="Geschlecht" value="d">
+			divers
+		</label>
+		
+		
+		<label for="Geburtsland">Geburtsland:</label>
+		<select name="GebLand" id="Geburtsland">
+			<option value="AT">Österreich</option>
+			<option value="DE">Deutschland</option>
+			<option value="ES">Spanien</option>
+			<option value="IT">Italien</option>
+			<option selected>Kroatien</option>
+			<option>Tschechien</option>
+			<option>Ungarn</option>
+		</select>
+		
+		<label>
+			Ihre Nachricht an uns:
+			<textarea name="Nachricht" placeholder="Bitte um Ihre Nachricht"></textarea>
+		</label>
+		
+		<fieldset>
+			<legend>Pflichtangaben für den Versand</legend>
+			<label>
+				<input type="checkbox" name="AGB" value="akzeptiert">
+				Ich akzeptiere die Allgemeinen Geschäftsbedingungen
+			</label>
+			<label>
+				<input type="checkbox" name="DSGVO" value="akzeptiert">
+				Ich akzeptiere die Datenschutzrichtlinien
+			</label>
+			<input type="submit" value="abschicken">
+		</fieldset>
+	</form>
+</body>
+</html>

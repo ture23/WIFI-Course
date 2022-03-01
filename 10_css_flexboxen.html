@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Flexboxen</title>
+	<style>
+		div {
+			border:1px solid grey;
+		}
+		
+		#a {
+			width:10em;
+			height:10em;
+			background-color:#eee;
+			overflow-y:auto;
+		}
+		
+		.flexbox {
+			height:20em;
+			display:flex;
+			flex-direction:row; /* "erste Dimension": row (Standard) | row-reverse | column | column-reverse */
+			flex-wrap:wrap; /* nowrap (Standard) | wrap | wrap-reverse */
+			align-items:flex-start; /* "zweite Dimension" nach der flex-direction: stretch (Standard) | flex-start | flex-end | center */
+			justify-content:flex-start; /* "erste Dimension": flex-start (Standard) | flex-end | center | space-between | space-around | space-evenly */
+			
+			/* align-content:space-around; */ /* "zweite Dimension": space-around (Standard) | flex-start | flex-end | space-between */
+			
+			gap:0em; /* Abstand zwischen Flex-Items: gap (beide Richtungen), row-gap (zwischen den Zeilen bei einem flex-wrap:wrap | wrap-reverse), column-gap (zwischen den Flex-Items je flex-direction) */
+			
+			overflow-x:auto; /* "Überstand in x-Richtung: auto - es wird automatisch ein Scrollbar einblendet, wenn dieser benötigt wird */
+		}
+		.flexbox > * {
+			flex-basis:15%; /* "Grundgröße" eines Items */
+			flex-shrink:1; /* 1 (Standard): ja, sie dürfen sich verkleinern | 0: nein, sie dürfen sich nicht verkleinern */
+			flex-grow:0; /* 0 (Standard): nein, sie dürfen sich nicht vergrößern | 1: ja, sie dürfen sich vergrößern */
+			
+			order:0; /* 0 (Standard): in der Reihenfolge des Vorkommens im HTML-Code */
+		}
+		
+		#fi1 {
+			order:1;
+		}
+		#fi2 {
+			flex-grow:0;
+			order:5;
+		}
+		#fi3 {
+			order:3;
+		}
+		#fi4 {
+			order:4;
+		}
+		#fi5 {
+			/* width:40%; */
+			order:2;
+			align-self:center;
+		}
+		#fi6 {
+			order:6;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="flexbox">
+		<div id="fi1">EinseinsEinseins</div>
+		<div id="fi2">Zwei2</div>
+		<div id="fi3">Drei33</div>
+		<div id="fi4">VierVierVier</div>
+		<div id="fi5">Fünf<br>Fünf</div>
+		<div id="fi6">Sechs</div>
+	</div>
+	<p id="a">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+</body>
+</html>

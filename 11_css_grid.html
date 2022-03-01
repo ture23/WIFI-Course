@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grid</title>
+	<style>
+		.grid {
+			width:50em;
+			margin:auto;
+			border:2px solid grey;
+			background-color:white;
+			
+			display:grid;
+			/* grid-template-columns:30% 1fr 20em; */
+			grid-template-columns:2fr 270px 1fr 5em;
+			/* grid-template-rows:5em 7em 3em; */
+			grid-gap:0.5em;
+			grid-column-gap:2em;
+			grid-row-gap:0.2em;
+			
+			grid-template-areas:
+				"a b b"
+				"d b b"
+				"g b b";
+		}
+		div {
+			border:1px solid darkgrey;
+			background-color:#eee;
+			justify-items:stretch; /* horizontal: stretch (Standard) | start | end | center */
+			align-items:stretch; /* vertikal: stretch (Standard) | start | end | center */
+		}
+		#i3 {
+			background-color:#ffc;
+			grid-area:b;
+		}
+		#i6 {
+			grid-column-start:1;
+			grid-column-end:span 2;
+			/* grid-column:span 2; */
+			grid-row:span 3;
+	</style>
+</head>
+
+<body>
+	<div class="grid">
+		<div>Eins</div>
+		<div>Zwei</div>
+		<div id="i3">Drei</div>
+		<div>Vier</div>
+		<div>Fünf</div>
+		<div id="i6">Sechs</div>
+	</div>
+</body>
+</html>

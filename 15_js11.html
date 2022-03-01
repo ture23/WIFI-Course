@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Arrays</title>
+</head>
+
+<body>
+	<script>
+		var a = new Array(); //ältere Schreibweise zum Deklarieren eines Arrays; Array ist aktuell noch leer
+		var b = []; //neuere Schreibweise zum Deklarieren eines Arrays; Array ist aktuell noch leer
+		
+		a[3] = 7; //[undefined, undefined, undefined, 7] --> vier Einträge im Array --> das Array besitzt die Länge 4
+		a[1] = "Uwe"; //[undefined, "Uwe", undefined, 7] --> vier Einträge im Array --> das Array besitzt nach wie vor die Länge 4
+		a[6] = true; //[undefined, "Uwe", undefined, 7, undefined, undefined, true] --> Länge 7
+		
+		var laenge = a.length; //ermittelt die Länge des Arrays
+		console.log("Das Array a besitzt die Länge ",laenge);
+		
+		a[4] = a[3] + 5; //[undefined, "Uwe", undefined, 7, 12, undefined, true] --> Länge 7
+		a[1] = a[4]<17 && a[6]; //[undefined, true, undefined, 7, 12, undefined, true] --> Länge 7
+		console.log(a);
+		
+		var c = new Array(undefined,true,undefined,7,12,undefined,true);
+		console.log(c);
+		
+		var d = new Array(4); //NICHT: [4], sondern: [undefined, undefined, undefined, undefined]
+		console.log(d);
+		var e = [4]; //in der Tat: [4]
+		console.log(e);
+		
+		var md = [];
+		md[3] = 5; //[undefined, undefined, undefined, 5]
+		md[2] = []; //[undefined, undefined, [], 5]
+		md[2][3] = "abc"; //[undefined, undefined, [undefined, undefined, undefined, "abc"], 5]
+		var laenge2 = md[2].length; //4
+		console.log(laenge2);
+		
+		console.log(a[0]);
+		console.log(a[1]);
+		console.log(a[2]);
+		console.log(a[3]);
+		console.log(a[4]);
+		console.log(a[5]);
+		console.log(a[6]);
+		
+		var i = 0;
+		console.log(a[i]); //a[i] --> a[0], da i==0 --> undefined
+		i++;
+		console.log(a[i]); //a[i] --> a[1], da i==1 --> true
+		i++;
+		console.log(a[i]); //a[i] --> a[2], da i==2 --> undefined
+		i++;
+		console.log(a[i]); //a[i] --> a[3], da i==3 --> 7
+		i++;
+		console.log(a[i]); //a[i] --> a[4], da i==4 --> 12
+		i++;
+		console.log(a[i]); //a[i] --> a[5], da i==5 --> undefined
+		i++;
+		console.log(a[i]); //a[i] --> a[6], da i==6 --> true
+		i++;
+		console.log(a[i]); //a[i] --> a[7], da i==7 --> ist nicht mehr möglich, da wir das Ende des Arrays überschritten haben... (Länge des Arrays ist ja nur 7, dh. die Stellen 0-6)
+		
+		console.log("----");
+		for(var i=0; i<a.length; i++) {
+			//gibt den Inhalt des Arrays a in normaler Reihenfolge in der Entwicklerkonsole aus
+			console.log(a[i]);
+		}
+		console.log("----");
+		for(var i=a.length-1; i>=0; i--) {
+			//gibt den Inhalt des Arrays a in umgekehrter Reihenfolge in der Entwicklerkonsole aus
+			console.log(a[i]);
+		}
+		console.log("----");
+		for(var i=0; i<a.length; i=i+2) {
+			//gibt jeden zweiten Eintrag des Arrays a in der Entwicklerkonsole aus (normale Reihenfolge)
+			console.log(a[i]);
+		}
+	</script>
+</body>
+</html>

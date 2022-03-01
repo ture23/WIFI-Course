@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<title>Tabellen</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Tabellen</h1>
+		<h2>Überschriften-Zellen</h2>
+		<table border="1">
+			<tr>
+				<td></td>
+				<th scope="col">Vorname</th>
+				<th scope="col">Nachname</th>
+				<th scope="col">Emailadresse</th>
+			</tr>
+			<tr>
+				<th scope="row">Person 1:</th>
+				<td>Uwe</td>
+				<td>Mutz</td>
+				<td>uwe.mutz@syne.at</td>
+			</tr>
+			<tr>
+				<th scope="row">Person 2:</th>
+				<td>Silvia</td>
+				<td>Mutz</td>
+				<td>silvia.mutz@syne.at</td>
+			</tr>
+			<tr>
+				<th scope="row">Person 3:</th>
+				<td>Alexandra</td>
+				<td>Müller</td>
+				<td>alex.mueller@gmail.com</td>
+			</tr>
+		</table>
+		
+		<h2>Bereiche innerhalb von Tabellen</h2>
+		<table border="1">
+			<caption>Adressliste (Stand 18.11.2021)</caption>
+			<thead>
+				<tr>
+					<th scope="col">Vorname</th>
+					<th scope="col">Nachname</th>
+					<th scope="col">Emailadresse</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Uwe</td>
+					<td>Mutz</td>
+					<td>uwe.mutz@syne.at</td>
+				</tr>
+				<tr>
+					<td>Silvia</td>
+					<td>Mutz</td>
+					<td>silvia.mutz@syne.at</td>
+				</tr>
+				<tr>
+					<td>Alexandra</td>
+					<td>Müller</td>
+					<td>alex.mueller@gmail.com</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3">Adressliste</td>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>

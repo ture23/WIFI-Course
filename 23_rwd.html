@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>RWD</title>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#menu").on("click",function() {
+				$("#nav0").toggleClass("show");
+			});
+		});
+	</script>
+	<style>
+		/*
+		button,
+		input[type=button],
+		input[type=submit],
+		:not(button) a {
+			padding:0.5em 1em;
+			background-color:rgba(0,0,255,0.05);
+			border:2px solid rgba(0,0,255,0.1);
+			border-radius:0.2em;
+			text-decoration:none;
+		}
+		button a {
+		}
+		*/
+		@media screen and (min-width:48em) {
+			#menu {
+				display:none;
+			}
+			nav {
+				display:block;
+			}
+		}
+		@media screen and (max-width:48em) {
+			#menu {
+				display:block;
+			}
+			nav {
+				display:none;
+			}
+			
+			.show {
+				display:block;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea <a href="#">Ich bin ein Link</a> takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+	<button>
+		Test
+		<a href="#">test2</a>
+	</button>
+	<button id="menu">menu</button>
+	<nav id="nav0">
+		<ul>
+			<li><a href="#">Nav</a></li>
+			<li><a href="#">Nav</a></li>
+			<li><a href="#">Nav</a></li>
+			<li><a href="#">Nav</a></li>
+			<li><a href="#">Nav</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grundlagen der Programmierung: Bedingungen</title>
+</head>
+
+<body>
+	<script>
+		var eingabe;
+		eingabe = prompt("Bitte geben Sie Ihren Namen ein:");
+		
+		/* schlecht gelöst, da eine switch-Anweisung besser geeignet wäre:
+		if(eingabe=="Uwe") {
+			console.log("Hallo Uwe");
+		}
+		else {
+			if(eingabe=="Silvia") {
+				console.log("Hi Silvia");
+			}
+			else {
+				if(eingabe=="Alex") {
+					console.log("Grüß Dich, Alex");
+				}
+				else {
+					if(eingabe=="Sabine") {
+						console.log("Hey Sabine");
+					}
+					else {
+						console.log("Hallo Unbekannte/r");
+					}
+				}
+			}
+		}
+		*/
+		
+		/* Switch-Anweisung: "Fall-Unterscheidung" --> "etwas" wird auf mehrere mögliche Fälle überprüft:
+		   - Variableninhalt
+		   - Wert
+		   - Rückgabewert einer Funktion
+		   - ...
+		*/
+		
+		switch(eingabe) {
+			case "Uwe":
+			case "UWE":
+			case "Uwe23":
+				console.log("Hallo Uwe");
+				break;
+			
+			case "Silvia":
+				console.log("Hi Silvia");
+				break;
+				
+			case "Alex":
+				console.log("Grüß Dich, Alex");
+				break;
+				
+			case "Sabine":
+				console.log("Hey Sabine");
+				break;
+				
+			default:
+				//wird immer dann ausgeführt, wenn keiner der obigen Fälle eingetreten ist; optional
+				console.log("Hallo Unbekannte/r");
+		}
+	</script>
+</body>
+</html>

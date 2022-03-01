@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			//wird ausgeführt, sobald das "Document ready" ist oder - mit anderen Worten - das Ereignis "DOMContentLoaded" eingetreten ist
+			$("img").css("border","2px solid red");
+			$("#pic0").attr("src","images/Buecher.jpg").attr("alt","Hallo Welt"); //"Schreibend"
+			var quelle = $("#pic0").attr("src"); //"Lesend"
+			console.log("quelle=",quelle);
+			
+			$("#p0").prepend("<strong>xxx</strong>"); //Schreibend
+			var htmlcode = $("#p0").html(); //Lesend
+			console.log("htmlcode=",htmlcode);
+			
+			$("img, p").after("<p>Halloooo</p>");
+		});
+	</script>
+	<style>
+		.a {
+			border:2px solid red;
+		}
+		.b {
+			border:5px dotted green;
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		/* Grundlegende Schritte mit jQuery: ----
+		   1. $("CSS-Selektion"): siehe an document.querySelector/querySelectorAll
+		      - id: $("#pic0")
+			  - class: $(".pics")
+			  - name: $("[name=pic"])
+			  - Tag: $("img")
+		   2. Liste (Abfolge) an Befehlen, die auf die Selektion angewendet werden sollen:
+		      $("img").BEFEHL1.BEFEHL2.BEFEHL3....BEFEHLn;
+		   3. Befehle kennenlernen:
+		      - HTML-Manipulation
+			    - Attribute:
+				  attr("src") --> lese den Inhalt des Attributs src aus
+				  attr("src","images/Buecher.jpg") --> überschreibe den Inhalt des src-Attributs
+				- HTML-Inhalt:
+				  - html("xxx")
+				  - append("xxx"): erweitere den bestehenden Inhalt am Ende
+				  - prepend("xxx"): erweitere den bestehenden Inhalt am Anfang
+				  - before, after: fügen vor/nach den ausgewählten Elementen HTML-Code ein
+			  - CSS-Manipulation:
+			    - direkt auf ausgewählte Elemente anwenden:
+				  css("EIGENSCHAFT","WERT")
+				- CSS-Klassen hinzufügen/entfernen:
+				  - addClass("KLASSENNAME")
+				  - removeClass("KLASSENNAME")
+				  - toggleClass("KLASSENNAME")
+				  - hasClass("KLASSENNAME") --> findet heraus, ob das ausgewählte Element eine gewisse Klasse besitzt; liefert true/false zurück: $("#p0").hasClass("b") --> true
+		      - Animation:
+			    - fadeIn(), fadeOut(), fadeToggle(),
+				- slideUp(), slideDown(), slideToggle()
+				- show(), hide(), toggle()
+		*/
+		
+	</script>
+
+	<img src="images/Jugend.jpg" id="pic0" name="pic" class="pics" alt="..">
+	<img src="images/Aegypten.jpg" alt="..">
+	
+	<p id="p0" class="b">Hallo</p>
+	
+	<button onclick="$('p').toggleClass('b');">Klasse b toggeln</button>
+	<button onclick="$('p').removeClass('b');">Klasse b entfernen</button>
+	<button onclick="$('img').fadeToggle(3000);">alle Bilder ein-/ausfaden</button>
+	<button onclick="$('p').slideToggle(1000);">alle Paragrafen zu-/aufklappen</button>
+	<button onclick="$('img').toggle();">alle Bilder ein-/ausblenden (ohne Animation)</button>
+	<script>
+		//document.getElementById("pic0").src
+		//document.getElementById("p0").innerHTML = "xxx";
+	</script>
+	
+</body>
+</html>

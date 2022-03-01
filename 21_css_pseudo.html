@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pseudoklassen und -Elemente</title>
+	<style>
+		a {
+			/* Linkfarbe für ALLE Zustände eines Links */
+			color:lightblue;
+		}
+		a:link {
+			/* Linkfarbe für einen noch nicht besuchten Link */
+			color:blue;
+		}
+		a:visited {
+			/* Linkfarbe für einen bereits besuchten Link */
+			color:green;
+		}
+		a:active {
+			/* Linkfarbe für einen im Moment aktiven Link */
+			color:yellow;
+		}
+		
+		a:hover {
+			/* Linkfarbe für einen Link, wo der Mauszeiger darübersteht (beachte: hover ist NICHT auf Links beschränkt!) */
+			background-color:grey;
+		}
+		input:focus {
+			color:yellow;
+			border:2px solid red;
+			box-shadow:0px 0px 0.5em red;
+		}
+		
+		/*
+		:first-child
+		:last-child
+		:nth-child(3) --> das dritte Kind von irgendjemandem
+		:nth-last-child(3) --> das drittletzte (vorvorletzte) Kind
+		
+		p:first-of-type --> "der erste vorkommende Paragraf"
+		p:last-of-type --> "der letzte vorkommende Paragraf"
+		p:nth-of-type(2) --> "der zweite vorkommende Paragraf"
+		p:nth-last-of-type(2) --> "der vorletzte vorkommende Paragraf"
+		
+		.b:first-of-type --> "das erste vorkommende Element der Klasse b"
+		
+		p:not(.c) --> "alle Paragrafen, die NICHT von der Klasse c sind"
+		input:not([type=checkbox]) --> "alle Eingabeelemente, außer Checkboxen"
+		
+		input:not([type=checkbox]):not([type=radio]) --> "alle Eingabeelemente, außer Checkboxen und Radio-Buttons"
+		
+		:root --> Root-Element (Wurzel-Element) des Dokuments
+		
+		:valid
+		:invalid
+		:checked
+		:required
+		:optional
+		*/
+		
+		input {
+			background-color:blue;
+		}
+		input[type=checkbox] {
+			background:none; /* background:inherit; */
+		}
+		
+		input:not([type=checkbox]) {
+			background-color:blue;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="http://www.wifi-ooe.at">zum WIFI</a>
+	<p>Hallo Welt</p>
+	<input type="text" value="abc">
+	
+	
+</body>
+</html>

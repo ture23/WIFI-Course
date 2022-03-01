@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+	<style>
+		#p0 {
+			background-color:#eeeeee;
+			border:2px solid rgb(255,255,127);
+			padding:0.625em; /* 10px; */
+			width:34.375em; /* 550px; */
+			height:18.75em; /* 300px; */
+			
+			color:green;
+			box-shadow:0px 0px 1em hsl(0,0%,50%);
+		}
+		
+		#link1 {
+			background-color:orange;
+			
+			width:15.625em; /* 250px; unwirksam, da Inline-Element */
+			height:9.375em; /* 150px; unwirksam, da Inline-Element */
+			
+			padding:0.9375em; /* 15px; */
+			border:2px solid red;
+			margin:1.5625em; /*25px; nur links/rechts, aber nicht oben/unten, da Inline-Element */
+		}
+		
+		#span01 {
+			background-color:orange;
+			
+			width:15.625em;
+			/* height:150px; */
+			
+			padding:0.9375em;
+			border:2px solid blue;
+			/* margin:25px; */
+			
+			display:none; /* none | inline | block | inline-block | ... */
+		}
+		
+		.b {
+			width:10em;
+			height:10em;
+			margin:0.5em;
+			border:1px solid black;
+			display:inline-block;
+		}
+		#a {
+			background-color:blue;
+		}
+		#b {
+			background-color:rgb(0,0,255);
+		}
+		#c {
+			background-color:hsl(240,100%,50%);
+		}
+		#d {
+			background-color:#0000ff; /* 00f --> verkürzte Schreibweise */
+		}
+		
+		#e {
+			background-color:rgba(0,0,255,0.5);	
+		}
+		#f {
+			background-color:hsla(240,100%,50%,0.5);	
+		}
+		
+		#x {
+			background-color:#999999;
+			padding:1em;
+		}
+	</style>
+</head>
+
+<body>
+	<p id="p0">Hallo Welt...! Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <a href="http://www.wifi.at" target="_blank" id="link1">Link zum WIFI</a>...Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed <span id="span01">diam voluptua</span>. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+	<div id="x">
+		<div id="a" class="b"></div>
+		<div id="b" class="b"></div>
+		<div id="c" class="b"></div>
+		<div id="d" class="b"></div>
+		<div id="e" class="b"></div>
+		<div id="f" class="b"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM - Document Object Model</title>
+	<script>
+		function tauscheBild(quelle,idElem) {
+			document.querySelector(idElem).src = quelle;
+		}
+		
+		window.addEventListener("DOMContentLoaded",function() {
+				document.getElementById("pic0").onclick = function() {
+					console.log('Es wurde auf das Bild geklickt');
+				}
+				document.getElementById("pic0").onmouseover = function() {
+					tauscheBild('images/Omikron.jpg','#pic0');
+				}
+				document.getElementById("pic0").onmouseout = function() {
+					tauscheBild('images/Aegypten.jpg','#pic0');
+				}
+			},false
+		);
+	</script>
+</head>
+
+<body>
+	<img src="images/Aegypten.jpg" id="pic0" alt="..">
+</body>
+</html>

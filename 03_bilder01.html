@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bilder</title>
+	<style>
+		img {
+			width:5em;
+			height:auto;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<h1>Bilder</h1>
+	<h2>Einfaches Verwenden von Bildern</h2>
+	<img src="a.jpg" alt="Logo der SYNE Online Media Agentur: weißer Inhalt auf schwarzem Hintergrund...">
+	<img src="test/b.jpg" alt="...">
+	<img src="test/c/d.jpg" alt="...">
+	
+	<h2>Bilder mit Bildunter- bzw. überschriften</h2>
+	<img src="a.jpg" alt="Logo der SYNE Online Media Agentur: weißer Inhalt auf schwarzem Hintergrund...">
+	<p>Logo der SYNE Online Media Agentur (gehört nicht zum darüberliegenden Bild)</p>
+	<figure>
+		<img src="a.jpg" alt="...">
+		<figcaption>Logo der SYNE Online Media Agentur</figcaption>
+	</figure>
+	<figure>
+		<figcaption>Logo der SYNE Online Media Agentur</figcaption>
+		<img src="a.jpg" alt="...">
+	</figure>
+	
+	<h2>Unterschiedliche Bildschirmgrößen</h2>
+	<!--
+	Bildschirmgrößen:
+	- Smartphone: 320x240Px (76800Px), 1080x1920Px, ...
+	- Tablet: 1024x768Px, 2048x1536Px, 2700...
+	- Notebook: 1680x1050Px, 1920x1080Px, ...
+	- Desktop: 1920x1280Px, 6016x3384Px (20.36 Millionen)
+	-->
+	<img src="a.jpg" alt="...">
+	<picture>
+		<source srcset="images/small.jpg" media="(max-width:768px)">
+		<source srcset="images/medium.jpg" media="(max-width:1280px)">
+		<source srcset="images/large.jpg" media="(max-width:1920px)">
+		<source srcset="images/xlarge.jpg" media="(max-width:2560px)">
+		<img src="images/alternativ_max.jpg" alt="..">
+	</picture>
+	
+	<figure>
+		<picture>
+			<source srcset="images/small.jpg" media="(max-width:768px)">
+			<source srcset="images/medium.jpg" media="(max-width:1280px)">
+			<source srcset="images/large.jpg" media="(max-width:1920px)">
+			<source srcset="images/xlarge.jpg" media="(max-width:2560px)">
+			<img src="images/alternativ_max.jpg" alt="..">
+		</picture>
+		<figcaption>Hier steht die Bildunterschrift</figcaption>
+	</figure>
+</body>
+</html>

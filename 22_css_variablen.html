@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS-Variablen</title>
+	<style>
+		:root {
+			/* Zugriff auf die "globalen" Eigenschaften des Dokuments */
+			--farbe:rgb(200,200,200);
+			--abstand:2em;
+		}
+		
+		/*
+		h1 {
+			color:rgb(0,200,0);
+		}
+		a {
+			color:rgb(0,200,0);
+		}
+		button {
+			border:2px solid rgb(0,200,0);
+			background-color:white;
+			color:rgb(0,200,0);
+			border-radius:0.5em;
+			padding:0.5em 1em;
+		}
+		*/
+		h1 {
+			color:var(--farbe);
+			font-weight:normal;
+		}
+		a {
+			color:var(--farbe);
+		}
+		button {
+			border:2px solid var(--farbe);
+			background-color:white;
+			color:var(--farbe);
+			border-radius:0.5em;
+			padding:0.5em 1em;
+		}
+		
+		p a {
+			--farbe:rgb(200,200,0);
+		}
+		
+		div {
+			--farbe2:darkblue; /* lokale Variable für ein div und alle Kind-Elemente */
+		}
+		strong {
+			color:var(--farbe2);
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Ich bin <strong>eine</strong> Überschrift</h1>
+	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At <a href="#">vero</a> eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+	<button>Klick...</button>
+	<a href="#">Ich bin auch ein Link</a>
+	<div>
+		Hier steht <strong>Text...</strong>
+	</div>
+</body>
+</html>

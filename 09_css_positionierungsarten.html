@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Positionierungsarten</title>
+	<style>
+		* {
+			position:relative;
+		}
+		
+		div {
+			margin:1em;
+			background-color:#eee;
+			padding:1em;
+			border:1px solid #ccc;
+		}
+		
+		#a {
+			position:sticky;
+			z-index:5;
+			left:5em;
+			top:1em;
+			width:20em;
+			height:5em;
+			background-color:rgba(255,255,204,0.5);
+			margin:0px;
+			
+			overflow:auto;
+		}
+		#b {
+			position:absolute;
+			left:5em;
+			top:3em;
+			width:10em;
+			height:10em;
+			z-index:5;
+			margin:0px;
+			background-color:hsla(120,100%,70%,0.5);
+			
+			overflow:auto;
+		}
+		
+		/*
+		#c,
+		#d {
+			position:relative;
+		}
+		*/
+		
+		#d {
+			position:absolute;
+			left:15em;
+			top:1em;
+			width:7em;
+			height:7em;
+			background-color:hsla(240,100%,70%,0.5);
+			z-index:8;
+			margin:0px;
+		}
+		
+		#e {
+			position:fixed;
+			left:0px;
+			right:0px;
+			top:0px;
+			bottom:0px;
+			z-index:3;
+			background-color:hsla(0,100%,70%,0.8);
+			margin:0px;
+		}
+	</style>
+</head>
+
+<body>
+	<div>Hallo</div>
+	<div>Hallo again</div>
+	<div id="a">Ich bin auch noch da</div>
+	<div id="c">
+		Ich habe ein Kind:
+		<div id="d">
+			Ich bin das Kind
+			<div id="b">
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+			</div>
+		</div>
+	</div>
+	<div id="e">Ein weiteres Element</div>
+	<div>... und noch eines</div>
+</body>
+</html>

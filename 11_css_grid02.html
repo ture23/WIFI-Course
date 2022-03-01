@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grid</title>
+	<style>
+		html, body {
+			margin:0;
+			padding0;
+		}
+		.grid {
+			height:100vh;
+			
+			display:grid;
+			grid-template-columns:1fr 80em 1fr;
+			grid-template-rows:5em 3em 1fr 5em;
+			grid-template-areas:
+				"h h h"
+				"n n n"
+				". haupt ."
+				"f f f";
+		}
+		header {
+			background-color:aqua;
+			grid-area:h;
+		}
+		nav {
+			background-color:beige;
+			grid-area:n;
+		}
+		main {
+			background-color:burlywood;
+			grid-area:haupt;
+			
+			display:grid;
+			grid-template-columns:1fr 1fr 1fr;
+		}
+		footer {
+			background-color:cadetblue;
+			grid-area:f;
+		}
+		
+		@media screen and (max-width:40em) {
+			.grid {
+				grid-template-columns:100%;
+				grid-template-areas:
+					"h"
+					"n"
+					"haupt"
+					"f";
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="grid">
+		<header>Ich bin der Header, Login</header>
+		<nav>Hier kommt die Navigation rein</nav>
+		<main>Das ist der Hauptbereich der Seite</main>
+		<footer>Ich bin der Footer</footer>
+		<aside>Werbung1, Bildergalerie</aside>
+		<aside>Facebook, RSS-Feeds, Anmeldung zum Newsletter, ...</aside>
+	</div>
+</body>
+</html>

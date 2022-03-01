@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			/*
+			$("#a").css("font-size","150%");
+			$("#b").css("font-size","200%");
+			$("#c").css("font-size","250%");
+			*/
+			
+			var faktor = 150;
+			$("li").each(function() {
+				console.log("ein neuer Durchlauf");
+				$(this).css("font-size",faktor+"%");
+				faktor = faktor+50;
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<ul>
+		<li id="a">Eins</li>
+		<li id="b">Zwei</li>
+		<li id="c">Drei</li>
+	</ul>
+</body>
+</html>

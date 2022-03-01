@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM - Document Object Model</title>
+	<script>
+		function tauscheBild() {
+			document.querySelector('#pic0').src = 'images/Omikron.jpg';
+		}
+		function tauscheBildZurueck() {
+			document.querySelector('#pic0').src = 'images/Aegypten.jpg';
+		}
+		function tauscheBild2() {
+			document.querySelector("#pic1").src = "images/Jugend.jpg";
+		}
+		function tauscheBildZurueck2() {
+			document.querySelector("#pic1").src = "images/Buecher.jpg";
+		}
+	</script>
+</head>
+
+<body>
+	<img src="images/Aegypten.jpg" id="pic0" alt=".." onclick="console.log('Es wurde auf das Bild geklickt');" onmouseover="tauscheBild();" onmouseout="tauscheBildZurueck();">
+	
+	<img src="images/Buecher.jpg" id="pic1" alt=".." onmouseover="tauscheBild2();" onmouseout="tauscheBildZurueck2();">
+</body>
+</html>

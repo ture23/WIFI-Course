@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+	<style>
+		/* ---- Selektion auf Tag-Ebene: ---- */
+		/* ---- Selektion auf Basis von Attributen: ---- */
+		p {
+			color:red;
+		}
+		h1 {
+			background-color:beige;
+		}
+		li {
+			border:1px solid grey;
+			color:grey;
+		}
+		
+		[title] {
+			/* alle Elemente, welche ein Attribut title besitzen */
+		}
+		[data-text="abc"] {
+			/* alle Elemente, welche ein Attribut data-text mitsamt dem Wert "abc" haben */
+		}
+		/* ---------------------------------- */
+		
+		/* ---- Selektion auf Klassen-Ebene: ---- */
+		.a {
+			font-family:Arial;
+			color:orange;
+		}
+		.b {
+			font-size:150%;
+		}
+		.c {
+			font-weight:bold;
+		}
+		/* -------------------------------------- */
+		
+		/* ---- Selektion auf ID-Ebene: ---- */
+		#x12 {
+			font-style:italic;
+			color:darkmagenta;
+		}
+		/* --------------------------------- */
+		
+		p.b {
+			/* alle Paragrafen der Klasse b: 0011 */
+			color:green;
+		}
+		#x12.a {
+			/* ein Element mit der ID x12 und der Klasse a: 0110 */
+			color:yellow;
+		}
+		p#x12 {
+			/* ein Element mit der ID x12 vom Typ Paragraf: 0101 */
+		}
+		li#x12.b {
+			/* ein Element mit der ID x12 und der Klasse b vom Typ Listenelement: 0111 */
+			color:burlywood;
+		}
+		
+		p, .a {
+			/* alle Paragrafen und alle Elemente der Klasse a: 0001, 0010 */
+			font-size:200%;
+		}
+		li {
+			/* 0001, aber auf Autoren-Stylesheet-Ebene 4! */
+			color:blue !important;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>CSS</h1>
+	<p class="b">Hallo Welt!</p>
+	<p class="a">Hallo...</p>
+	<ul class="b">
+		<li>Eins</li>
+		<li style="border:3px solid blue;">Zwei</li>
+		<li>Drei
+			<ul class="b">
+				<li>Drei-Eins</li>
+				<li class="a b" id="x12" style="color:turquoise;">Drei-Zwei</li>
+			</ul>
+		</li>
+		<li title="Dieses Element beschreibt den vierten Punkt">Vier</li>
+	</ul>
+	<h2 class="b d">Ein bisschen Text</h2>
+	<p class="a b">Blablabla</p>
+	<p data-text="xyz">Blablablabla</p>
+	<p data-text="abc">usw.</p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM - Document Object Model</title>
+	<script>
+		function tauscheBild(quelle) {
+			document.querySelector('#pic0').src = quelle;
+		}
+		function tauscheBild2(quelle) {
+			document.querySelector("#pic1").src = quelle;
+		}
+	</script>
+</head>
+
+<body>
+	<img src="images/Aegypten.jpg" id="pic0" alt=".." onclick="console.log('Es wurde auf das Bild geklickt');" onmouseover="tauscheBild('images/Omikron.jpg');" onmouseout="tauscheBild('images/Aegypten.jpg');">
+	
+	<img src="images/Buecher.jpg" id="pic1" alt=".." onmouseover="tauscheBild2('images/Jugend.jpg');" onmouseout="tauscheBild2('images/Buecher.jpg');">
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pseudoelemente</title>
+	<style>
+		p::first-line {
+			font-weight:bold;
+		}
+		p::first-letter {
+			font-size:2.5em;
+		}
+		p::before {
+			content:"***";
+			color:red;
+		}
+		p::after {
+			content:"+++";
+			color:red;
+			font-size:2.5em;
+			font-weight:bold;
+		}
+		input:required::after {
+			content:"*";
+		}
+	</style>
+</head>
+
+<body>
+	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+</body>
+</html>

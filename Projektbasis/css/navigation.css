@@ -1,0 +1,11 @@
+nav ul {
+	display:flex;
+	justify-content:center;
+	align-content:stretch;
+	align-items:stretch;
+}
+nav li {
+	display:block;
+	margin-left:1em;
+	margin-right:1em;
+}

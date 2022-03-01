@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grundlagen der Programmierung: Variablen</title>
+</head>
+
+<body>
+	<script>
+		/* Vergleichsoperationen: Variablen (-werte) werden miteinander verglichen; Ergebnis: boolscher Wert (true/false)
+		   - numerisch:
+		     - Gleichheit: ==
+			 - Ungleichheit: !=
+			 - Größer: >
+			 - Kleiner: <
+			 - Größer-Gleich: >=
+			 - Kleiner-Gleich: <=
+		   - Strings:
+		     - Gleichheit: ==
+			 - Ungleichheit: !=
+		   - Boolsch:
+		     - Gleichheit: ==
+			 - Ungleichheit: !=
+		   - allgemein:
+		     - Wertvergleich auf Gleichheit: ==
+			 - Wertvergleich auf Ungleichheit: !=
+			 - Wert- und Typvergleich auf Gleichheit: ===
+			 - Wert- und Typvergleich auf Ungleichheit: !==
+		*/
+		
+		var a=23, b=17, c;
+		c = a==b; // --> false
+		c = a!=b; // --> true
+		console.log("c=",c);
+		c = a>b; // --> true
+		c = a<b; // --> false
+		c = a>=b; // --> true
+		c = a<=b; // --> false
+		alert("stopp....");
+		
+		var d="Uwe", e="Mutz", f;
+		f = d==e; //false
+		f = d!=e; //true
+		
+		var g=true, h=false, i;
+		i = g==h; //false
+		i = g!=h; //true
+		
+		var j=23, k="23", l, m;
+		l = j==k; // 23=="23" --> true --> Versuch einer Typumwandlung: 23 --> "23" --> "23"=="23" --> true; "23" --> 23 --> 23==23 --> true --> "Wertevergleich"
+		m = j===k; // 23==="23" --> false (keine Typumwandlung) --> "Wert- und Typvergleich";
+		
+		/* Wertigkeit von Operationen:
+		   1. Numerische (Rechen-) Operationen
+		   2. Vergleichsoperationen
+		   3. Logische Operationen
+		*/
+		
+		var u=23, v=17, x=89, y=false, z;
+		z = u+v==x || y && 17*v!=u; //u+v, 17*v, ... --> 23+17==89 || false && 17*17!=23 --> 40==89 || false && 289!=23 --> false || false && true --> false || false --> false
+		
+		console.log("Hallo Welt!");
+		console.log(z);
+		console.log(c);
+		console.log("c=" + c);
+		console.log("c=",c);
+		
+		document.write("<h1>Hallo Welt!</h1>");
+		document.write(c);
+		
+		alert("Hallo Welt!");
+	</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Funktionen</title>
+	<script>
+		/* Funktionen: sind Blöcke an Code, die bei Bedarf (nämlich nach einem sog. "Funktionsaufruf") ausgeführt werden; 2 Schritte:
+		   1. Funktionsdefinition: legt fest
+		      - Name der Funktion
+			  - ggf. Informationen, die man der Funktion "bereitstellen" muss, damit sie ordentlich funktioniert
+			  - ggf. die Angabe des Wertes, der als Ergebnis der Funktion "zurückgeliefert" wird
+		   2. Funktionsaufruf: erzeugt, dass der Code der Funktion auch wirklich ausgeführt wird; dies kann beliebig oft erfolgen
+		*/
+		
+		function f0() {
+			//Funktion ohne Übergabevariablen und ohne Rückgabewert
+			var a = 17, b = 23, c;
+			c = a+b;
+			console.log("f0: c=",c);
+		}
+		
+		function f1(a,b) {
+			//Funktion mit zwei Übergabevariablen (a und b) und ohne Rückgabewert
+			var c;
+			c = a+b;
+			console.log("f1: c=",c);
+		}
+		
+		function f2() {
+			//Funktion ohne Übergabevariablen, aber mit Rückgabewert
+			var a = 17, b = 23, c;
+			c = a+b;
+			
+			return c; //gib den Inhalt der Variable c an den "Aufrufer" zurück
+		}
+		
+		function f3(a,b) {
+			//Funktion mit zwei Übergabevariablen (a und b) und einem Rückgabewert (Inhalt der Variable c)
+			var c;
+			c = a+b;
+			
+			return c; //liefert den Inhalt der Variable c an den Aufrufer zurück UND beendet die Abarbeitung der Funktion
+			
+			console.log("Hallo"); //wird nicht mehr ausgeführt
+		}
+		function f3a(a,b=0) {
+			//Funktion mit zwei Übergabevariablen (a und b mit dem Standardwert 0) und einem Rückgabewert (Inhalt der Variable c)
+			var c;
+			c = a+b;
+			
+			return c; //liefert den Inhalt der Variable c an den Aufrufer zurück UND beendet die Abarbeitung der Funktion
+			
+			console.log("Hallo"); //wird nicht mehr ausgeführt
+		}
+		
+		function f4() {
+			//Funktion ohne Übergabevariablen, aber mit Rückgabewert; diese Funktion bildet die Summe aller an sie übergebenen Werte und liefert diese an den Aufrufer zurück
+			var args = f4.arguments; //arguments ist ein Array, welches alle an die Funktion übergebenen Werte beinhaltet
+			console.log(args);
+			
+			var summe = 0;
+			for(var i=0; i<args.length; i++) {
+				summe = summe + args[i];
+			}
+			
+			return summe;
+		}
+		
+		function f5(a,b) {
+			var c; //lokale Variable --> sie ist nur innerhalb dieser Funktion gültig
+			c = a+b+x;
+			console.log("f5: c=",c);
+			x = 2*b; //sollte in der Regel nicht vorkommen: globale Variablen innerhalb einer Funktion verändern
+		}
+	</script>
+</head>
+
+<body>
+	<script>
+		var x = 199;
+		f0(); //Aufruf der Funktion f0
+		f0(); //(erneuter) Aufruf der Funktion f0
+		
+		f1(17,23); //Aufruf der Funktion f1 mit den Übergabewerten 17 und 23
+		f1(18,24); //Aufruf der Funktion f1 mit den Übergabewerten 18 und 24
+		//console.log(c); //versucht, auf den Inhalt einer Variable c zuzugreifen, welche jedoch NICHT existiert
+		
+		var erg; //globale Variable --> Variable, die sowohl innerhalb einer Funktion als auch außerhalb einer Funktion "gültig" (oder mit anderen Worten: verwendbar) ist
+		erg = f2(); //Aufruf der Funktion f2 und danach Speichern des Rückgabewertes der Funktion f2 in die Variable erg
+		console.log("erg=",erg);
+		
+		erg = f3(20,25); //Aufruf der Funktion f3 mit den Übergabewerten 20 und 25 und dem Rückgabewert der Funktion f3, welcher nach Beendingung des Abarbeitens der Funktion f3 zurückgeliefert wird
+		console.log("erg=",erg);
+		
+		erg = f4(17,18,19,20,21); //Aufruf der Funktion f4 mit den Übergabewerten 17, 18, 19, 20 und 21
+		console.log("erg=",erg);
+		erg = f4(23,-9);
+		console.log("erg=",erg);
+		erg = f4(1,2,3,4,5,6,8,10,-4);
+		console.log("erg=",erg);
+		
+		erg = f3(19);
+		console.log("erg=",erg); //NaN: not a number, da 19+undefined kein Ergebnis liefert
+		erg = f3a(19);
+		console.log("erg=",erg); //19+0=19
+		
+		console.log("vorher: x=",x);
+		f5(1,2);
+		console.log("nachher: x=",x);
+		f5(2,3);
+		console.log("nachher: x=",x);
+	</script>
+</body>
+</html>

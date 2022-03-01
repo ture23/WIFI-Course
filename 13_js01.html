@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grundlagen der Programmierung: Variablen</title>
+</head>
+
+<body>
+	<script>
+		/* 1. Variablen:
+		   eine Variable stützt sich auf drei wesentliche Eigenschaften:
+		   - Variablenname
+		   - Wertetyp: numerisch (Zahlen; mit/ohne Kommastelle; ohne Komma: "Integer", mit Komma: "Float (ing Point)"), Strings (Texte; stehen immer unter einfachen oder doppelten Anführungszeichen), Boolscher Wert (Wahrheitswert: true/false)
+		   - Wert
+		*/
+		
+		var a; // "Deklarieren" einer Variable mit dem Namen a; wird 1x vorgenommen
+		a = 23; // "Wertzuweisung" an die Variable a, und zwar mit dem (numerischen) Wert 23 ("implizite" Typdeklaration); kann beliebig oft vorgenommen werden --> "Überschreiben" des Wertes einer Variablen
+		a=17;
+		var b;
+		b = '23'; // Textwert '23'
+		b = "Hallo Welt!"; // erneute Wertzuweisung mit dem Wert "Hallo Welt!"
+		b = 17; // erneute Wertzuweisung (numerischer Wert 17), jedoch auch ein "Typwechsel" --> "no-go"
+		var c;
+		c = true; // alternativ: false; "Boolscher Wert"
+		
+		var d, e, f; // Deklarieren der Variablen d, e und f
+		var g = 23, h, i, j = "xxx", k, l, m;
+		
+		const PI = 3.1415; // Deklarieren einer Konstante mit dem Namen PI; Wertzuweisung erfolgt ein einziges mal
+	</script>
+</body>
+</html>

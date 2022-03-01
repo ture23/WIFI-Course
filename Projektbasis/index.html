@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Unbenanntes Dokument</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="css/forms.css">
+	<link rel="stylesheet" href="css/navigation.css">
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"     rel="stylesheet">
+
+	
+	<script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+	<button id="btnMenu" onclick="$(this).next('nav').toggle();" class="material-icons">drag_handle</button>
+	<nav>
+		<ul>
+			<li><a href="#">Nav 1</a></li>
+			<li><a href="#">Nav 2</a></li>
+			<li><a href="#">Nav 3</a></li>
+			<li><a href="#">Nav 4</a></li>
+			<li><a href="#">Nav 5</a></li>
+			<li><a href="#">Nav 6</a></li>
+			<li><a href="#">Nav 7</a></li>
+			<li><a href="#">Nav 8</a></li>
+		</ul>
+	</nav>
+	<h1>Überschrift 1</h1>
+	<h2>Überschrift 2</h2>
+	<h3>Überschrift 3</h3>
+	<h4>Überschrift 4</h4>
+	<h5>Überschrift 5</h5>
+	<h6>Überschrift 6</h6>
+	
+	<div class="grid">
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">Vier</div>
+		<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">Vier</div>
+		<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">Vier</div>
+		<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">Sechs</div>
+		<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">Sechs</div>
+		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">Zwölf</div>
+	</div>
+	<div class="grid max">
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">Vier</div>
+		<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">Vier</div>
+		<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">Vier</div>
+		<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">Sechs</div>
+		<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">Sechs</div>
+		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">Zwölf</div>
+	</div>
+	<div class="grid max nogap">
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-1">Eins</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-2 col-xl-2">Zwei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">Drei</div>
+		<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">Vier</div>
+		<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">Vier</div>
+		<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">Vier</div>
+		<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">Sechs</div>
+		<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">Sechs</div>
+		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">Zwölf</div>
+	</div>
+	
+	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos <a href="#">et accusam</a> et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+	<ul>
+		<li>Eins</li>
+		<li>Zwei</li>
+		<li>Drei</li>
+	</ul>
+	<ol>
+		<li>Eins</li>
+		<li>Zwei</li>
+		<li>Drei</li>
+	</ol>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Vorname</th>
+				<th scope="col">Nachname</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Uwe</td>
+				<td>Mutz</td>
+			</tr>
+			<tr>
+				<td>Silvia</td>
+				<td>Mutz</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="2">Stand: 22.2.2022</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>

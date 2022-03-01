@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX</title>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			//ab dem Zeitpunkt, wo dieses Ereignis eintritt, ist der Browser mit dem Abarbeiten (=Einlesen & Verstehen) des Dokuments (konkret: des Dokumentbaumes) fertig --> ab jetzt können wir auf alle HTML-Elemente dieses Dokuments zugreifen
+			
+			$("#btn0").on("click",function(ev) {
+				ev.stopPropagation();
+				
+				$.ajax({
+					url: "content/newsticker.php",
+					data: {
+						VN: $("#VN").val(),
+						NN: $("#NN").val(),
+						Nachricht: $("#Nachricht").val()
+					},
+					method: "POST",
+					beforeSend: function() {
+						$("#overlay").show();
+					},
+					success: function(htmlinhalt) {
+						$("#a").prepend(htmlinhalt);
+						$("#Nachricht").val("");
+					},
+					error: function(xmlhr, fehlercode, fehlertext) {
+						$("#a").html("Leider ist ein Fehler aufgetreten, weshalb die gewünschten Informationen nicht geladen werden konnten.");
+					},
+					complete: function() {
+						$("#overlay").fadeOut();
+					}
+				});
+				
+				/*
+				$("#overlay").show();
+				
+				$("#a").load(
+					"content/kontakt.php",
+					{ VN: "Uwe", NN: "Mutz" },
+					function() {
+						//Callback-Funktion: wird dann aufgerufen, wenn das Laden (via load) sowie das Einfügen des geladenen HTML-Codes in das Element mit der ID #a abgeschlossen ist
+						$("#overlay").fadeOut(2000);
+					}
+				);
+				*/
+			});
+		});
+	</script>
+	<style>
+		#a {
+			background-color:#eee;
+			padding:0.5em;
+			margin:1em 0px;
+			min-height:10em;
+			border-radius:0.5em;
+		}
+		#overlay {
+			position:fixed;
+			left:0px;
+			top:0px;
+			bottom:0px;
+			right:0px;
+			z-index:10;
+			background-color:#ccc;
+			font-size:2em;
+			text-align:center;
+			padding:2em;
+			box-sizing:border-box;
+			display:none;
+		}
+		body, html {
+			margin:0px;
+			padding:0px;
+			min-height:100vh;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="overlay">
+		Lade Inhalt... einen Moment bitte
+	</div>
+	<div id="a"></div>
+	<form>
+		<label for="VN">Ihr Vorname:</label>
+		<input type="text" name="VN" id="VN">
+		<label for="NN">Ihr Nachname:</label>
+		<input type="text" name="NN" id="NN">
+		<label for="Nachricht">Ihre Nachricht:</label>
+		<textarea name="Nachricht" id="Nachricht"></textarea>
+		<button type="button" id="btn0">lade Inhalt</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grundlagen der Programmierung: Variablen</title>
+</head>
+
+<body>
+	<script>
+		/* Verknüpfungsoperationen: zwei (oder mehrere) Variablen (-werte) werden miteinander verknüpft/kombiniert
+		   - numerisch: "Rechnen"
+		     - Addition: + (Strichrechnung)
+			 - Subtraktion: - (Strichrechnung)
+			 - Multiplikation: * (Punktrechnung)
+			 - Division: / (Punktrechnung)
+			 - Modulo-Rechnung (Restwertrechnung einer Division): % (Punktrechnung)
+			 - Punkt- vor Strichrechnung
+			 - Klammersetzung ist immer erlaubt; ()
+		   - Strings: "Verbinden von Texten"
+		     - Verbindung: + --> verbindet Texte mit beliebigen anderen Werten (auch anderen Wertetypen)
+		   - Boolsch: "Logische Kombination"
+		     - UND: && (Punktrechnung)
+			 - OR: || (ALT Gr + <) (Strichrechnung)
+			 - NOT / Negation (Umkehrung): ! true --> false, false --> true
+		*/
+		
+		var a=17, b=23, c;
+		c = a + b; //Addition der Variablenwerte von a und b --> 40
+		c = a - b; //Substraktion --> -6
+		c = a * b; //Multiplikation
+		c = a / b; //Division
+		c = a % b; //Modulorechnung
+		c = 23*(a-(b+13/a%9)+5)-90;
+		
+		var vn="Uwe", nn="Mutz", n;
+		n = vn + nn; // --> "UweMutz"
+		n = vn + " " + nn; // --> "Uwe Mutz"
+		n = 23 + vn; // --> "23Uwe"
+		n = vn + 23; // --> "Uwe23"
+		
+		var d=true, e=false, g;
+		g = d && e; // --> true && false --> false
+		g = d || e; // --> true || false --> true
+		g = !e; // --> !false --> true
+	</script>
+</body>
+</html>
